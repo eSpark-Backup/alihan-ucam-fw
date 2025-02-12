@@ -1,0 +1,41 @@
+.home-title{
+font-size:400% !important;
+margin:50px 0px;
+}
+#portal-logo {    
+    margin-top: 20px;
+}
+#portal-globalnav > li.documents.has_subtree.inPath > ul > li.products.has_subtree.inPath.current > ul > li > a {
+width:380px;
+}
+#portal-globalnav > li.documents.has_subtree.inPath > ul > li.products.has_subtree > ul > li> a{
+width:380px;
+}
+#portal-globalnav > li.documents.has_subtree > ul > li.products.has_subtree > ul > li > a{
+width:380px;
+}
+#portal-globalnav > li.documents.has_subtree > a{
+color:#fff !important;
+}
+#portal-globalnav > li.data.has_subtree > a{
+    color:#fff !important;
+    }
+#portal-globalnav > li.test.has_subtree > a{
+    color:#fff !important;
+    }
+
+.plone-navbar{
+background-color: #1b4c9e;
+}
+.plone-nav li ul li a {
+    background-color: #1b4c9e;
+    color:#fff !important;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+.plone-toolbar-logo img{width:23px;}

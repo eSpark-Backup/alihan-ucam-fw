@@ -1,0 +1,42 @@
+body {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.search {
+    text-align: left;
+    width: 300px;
+    display: inline;
+    height: 31px;
+    border-color: #999;
+}
+
+.search:hover {
+    color: #000;
+}
+
+.layui-table-tool {
+    z-index: 1 !important;
+}
+
+.layui-table-fixed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+.layui-btn-normal{
+    background-color: #1f4d9c;
+}
+.layui-border-blue {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #1f4d9c!important;
+    color: #1f4d9c!important;
+}
+.layui-table th {
+    text-align: left;
+    font-weight: 500;
+}
+#plone-document-byline{
+    display: none;
+}

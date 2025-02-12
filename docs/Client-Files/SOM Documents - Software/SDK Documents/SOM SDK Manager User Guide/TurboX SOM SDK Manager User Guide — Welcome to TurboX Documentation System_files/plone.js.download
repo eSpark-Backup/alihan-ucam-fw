@@ -1,0 +1,74 @@
+try {
+    var st = '';
+    var aall = $("#parent-fieldname-text").find("a");
+
+    function checkRole() {
+        jQuery(function ($) {
+            $.ajax({
+                url: "https://docs.thundercomm.com/turbox_doc/@@personal-information",
+                type: "GET",
+                success: function (result) {
+                    st = JSON.stringify(result);
+                    if (st.indexOf("@thundersoft.com") > 0 || st.indexOf("@thundercomm.com") > 0) {
+                        showInternal()
+                        console.log("内部客户");
+                    } else {
+                        console.log("外部客户");
+                    }
+                }
+            });
+        });
+
+    }
+
+    function showInternal() {
+
+        for (i = 0; i < aall.length; i++) {
+            if (aall[i].text.indexOf("internal") > 0) {
+                aall[i].style.display = "";
+                console.log(i);
+            }
+        }
+
+    }
+
+    checkRole();
+} catch (error) {
+
+}
+
+
+// 修改无权访问页面
+if (window.location.href.indexOf('insufficient-privileges') > 0) {
+    $("#content > div:nth-child(2)").replaceWith('<div style="font-size: 18px;margin-bottom:10px;">You do not have permission to view this document, please <a href="http://www.thundercomm.com/document-permission-application/" target="_blank" style="text-decoration: underline;" class="applyforright">click here</a> to apply.</div>');
+}
+
+// 更新copyright年份
+document.querySelector("#portal-footer > div > div > section > p:nth-child(2)").innerText="Copyright © 2016 - 2024. Thundercomm America Corporation. All rights reserved.";
+setTimeout(() => {
+    document.querySelector("#portal-footer > div > div > section > p:nth-child(2)").innerText="Copyright © 2016 - 2024. Thundercomm America Corporation. All rights reserved.";
+}, 2000);
+
+// 更新登录表单使其变得安全
+function makeEnsecure(){
+    if(window.location.href.indexOf('/turbox_doc/login')>0){
+        try {
+            document.querySelector("#login-form > form").setAttribute('action','https://docs.thundercomm.com/turbox_doc/login');
+        } catch (error) {
+            console.log('error');
+        }        
+    }
+}
+
+setTimeout(() => {
+    makeEnsecure();
+}, 500);
+
+setTimeout(() => {
+    makeEnsecure();
+}, 1000);
+
+setTimeout(() => {
+    makeEnsecure();
+}, 2000);
+
